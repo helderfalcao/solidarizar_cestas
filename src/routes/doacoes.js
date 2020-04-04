@@ -1,17 +1,17 @@
 module.exports = (app) => {
     /**
      * @swagger
-     * /cestas:
+     * /doacoes:
      *  get:
      *    tags:
-     *    - cestas
-     *    description: Utilizado para recuperar as cestas cadastradas
+     *    - doacoes
+     *    description: Utilizado para recuperar as doacoes cadastradas
      *    responses:
      *      '200':
-     *        description: cestas retornadas com sucesso
+     *        description: doacoes retornadas com sucesso
      */
   
-    app.get("/cestas", (req, res) => {
+    app.get("/doacoes", (req, res) => {
       console.table(req);
       res.json("{ success: '200'}");
     });

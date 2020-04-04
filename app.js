@@ -27,6 +27,9 @@ app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 // Datasource connection call
 require("./src/dao/db")();
 
+// Load routes
+require("./src/routes/index")(app)
+
 app.listen(port, () => {
   console.log("Server is running");
 });
