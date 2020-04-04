@@ -1,0 +1,33 @@
+{
+  "name": "solidarizar_cestas",
+  "version": "1.0.0",
+  "description": "Projeto para facilitar a arrecadação e doação de cestas básicas",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/helderfalcao/solidarizar_cestas.git"
+  },
+  "keywords": [
+    "cestas",
+    "solidariedade",
+    "instituições",
+    "doadores"
+  ],
+  "author": "Helder da Silva Falcão",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/helderfalcao/solidarizar_cestas/issues"
+  },
+  "homepage": "https://github.com/helderfalcao/solidarizar_cestas#readme",
+  "dependencies": {
+    "bluebird": "^3.7.2",
+    "express": "^4.17.1",
+    "mongoose": "^5.9.7",
+    "swagger-jsdoc": "^4.0.0",
+    "swagger-ui-express": "^4.1.4"
+  }
+}
