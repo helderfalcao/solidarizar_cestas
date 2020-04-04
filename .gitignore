@@ -105,3 +105,6 @@ dist
 
 # Local execution
 local/data
+
+# Vs code
+.vscode
