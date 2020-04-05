@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const swaggerJsDoc = require("swagger-jsdoc");
 const swaggerUi = require("swagger-ui-express");
+const bodyParser = require('body-parser');
 const port = process.env.PORT || 5000;
 
 // Extended: https://swagger.io/specification/#infoObject
@@ -19,10 +20,14 @@ const swaggerOptions = {
   // ['./src/routes/*.js']
   apis: ["app.js", "./src/routes/*.js"],
 };
-
 const swaggerDocs = swaggerJsDoc(swaggerOptions);
-
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs));
+
+// Parse json
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({
+  extended: true
+}));
 
 // Datasource connection call
 require("./src/dao/db")();

@@ -4,9 +4,8 @@ var mongoose = require("mongoose"),
 var model = new Schema(
   {
     nome: String,
-    enderço: String,
-    cesta: String,
-    status: String, //Pendente, Chegou, Entregue
+    enderco: String,
+    responsavel: String
   },
   {
     strict: false,
