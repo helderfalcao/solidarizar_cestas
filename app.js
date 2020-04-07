@@ -7,11 +7,14 @@ const port = process.env.PORT || 5000;
 
 // Cors configurations
 var cors = require('cors');
+var cookieParser = require('cookie-parser');
+
 var corsOptions = {
   origin: process.env['DOMAIN_CLIENT'] ? process.env['DOMAIN_CLIENT'] : 'http://localhost:8080',
   credentials: true
 };
 app.use(cors(corsOptions));
+app.use(cookieParser());
 
 // Extended: https://swagger.io/specification/#infoObject
 const swaggerOptions = {
