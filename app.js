@@ -5,6 +5,14 @@ const swaggerUi = require("swagger-ui-express");
 const bodyParser = require('body-parser');
 const port = process.env.PORT || 5000;
 
+// Cors configurations
+var cors = require('cors');
+var corsOptions = {
+  origin: process.env['DOMAIN_CLIENT'] ? process.env['DOMAIN_CLIENT'] : 'http://localhost:8080',
+  credentials: true
+};
+app.use(cors(corsOptions));
+
 // Extended: https://swagger.io/specification/#infoObject
 const swaggerOptions = {
   swaggerDefinition: {
