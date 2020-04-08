@@ -4,6 +4,7 @@ var mongoose = require("mongoose"),
 var model = new Schema(
   {
     nome: String,
+    imagem: String
   },
   {
     strict: false,

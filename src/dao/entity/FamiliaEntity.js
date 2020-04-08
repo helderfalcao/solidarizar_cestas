@@ -5,6 +5,7 @@ var model = new Schema(
   {
     nome: String,
     integrantes: [String],
+    imagem: String
   },
   {
     strict: false,

@@ -13,6 +13,8 @@ module.exports = (app) => {
    *         type: string
    *       responsavel:
    *         type: string
+   *       imagem:
+   *         type: string
    */
   app
     .route("/instituicoes")

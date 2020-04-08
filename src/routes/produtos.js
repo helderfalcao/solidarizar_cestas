@@ -11,6 +11,8 @@ module.exports = (app) => {
    *         type: string
    *       descricao:
    *         type: string
+   *       imagem:
+   *         type: string
    */
   app
     .route("/produtos")

@@ -13,6 +13,8 @@ module.exports = (app) => {
    *         type: array
    *         items:
    *           type: string
+   *       imagem:
+   *         type: string
    */
   app
     .route("/familias")

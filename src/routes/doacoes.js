@@ -17,6 +17,8 @@ module.exports = (app) => {
    *         type: string
    *       status:
    *         type: string
+   *       imagem:
+   *         type: string
    */
   app
     .route("/doacoes")

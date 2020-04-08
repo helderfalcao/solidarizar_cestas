@@ -7,6 +7,7 @@ var model = new Schema(
     produtos: [String],
     cesta: String,
     status: String, //Pendente, Chegou, Entregue
+    imagem: String
   },
   {
     strict: false,

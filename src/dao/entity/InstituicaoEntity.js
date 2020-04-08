@@ -6,6 +6,7 @@ var model = new Schema(
     nome: String,
     descricao: String,
     responsavel: String,
+    imagem: String
   },
   {
     strict: false,
