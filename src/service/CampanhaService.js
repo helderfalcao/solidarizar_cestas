@@ -5,33 +5,33 @@ const Model = require("../dao/entity/CampanhaEntity"),
   doacaoModel = require("../dao/entity/DoacaoEntity"),
   produtoModel = require("../dao/entity/ProdutoEntity");
 
-  module.exports = businessUtil;
+module.exports = businessUtil;
 
-module.exports.campaignSummary = async (campanhaIds) => {
-  const campanhas = await Model.find({
-    _id: { $in: campanhaIds },
-  }).lean();
+module.exports.campaignSummary = async (campanhaId) => {
   const produtos = await produtoModel.find();
   const produtosMap = new Map();
-  produtos.forEach(produto => produtosMap.set(produto.id, produto.nome));
+  produtos.forEach((produto) => produtosMap.set(produto.id, produto.nome));
   return new Promise((fulfill, reject) => {
-     doacaoModel.aggregate([
-      { $unwind: "$produtos" },
-      {
-        $group: {
-          _id: {
-            status: "$status",
-            produto: "$produtos.produto"
+    doacaoModel
+      .aggregate([
+        { $match: { campanha: campanhaId } },
+        { $unwind: "$produtos" },
+        {
+          $group: {
+            _id: {
+              status: "$status",
+              produto: "$produtos.produto",
+            },
+            quantidade: { $sum: "$produtos.quantidade" },
           },
-          quantidade: { $sum: "$produtos.quantidade" }
         },
-      },
-    ]).then(resumos => {
-      resumos.forEach(resumo => {
-        resumo.nomeProduto = produtosMap.get(resumo._id.produto);
+      ])
+      .then((resumos) => {
+        resumos.forEach((resumo) => {
+          resumo.nomeProduto = produtosMap.get(resumo._id.produto);
+        });
+        fulfill(resumos);
       })
-      fulfill(resumos);
-    }).catch(reject);
-    
+      .catch(reject);
   });
 };

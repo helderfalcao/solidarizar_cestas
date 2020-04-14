@@ -128,6 +128,6 @@ module.exports = (app) => {
     app
     .route("/campanhas/summary/:id")
     .get((req, res) => {
-      helper.runDefaultPromise(service.campaignSummary([req.params.id]), res)
+      helper.runDefaultPromise(service.campaignSummary(req.params.id), res)
     })
 };

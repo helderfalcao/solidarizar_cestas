@@ -9,6 +9,7 @@ var model = new Schema(
     cesta: String,
     status: String, //Pendente, Chegou, Entregue
     imagem: String,
+    campanha: String
   },
   {
     strict: false,

@@ -21,6 +21,8 @@ module.exports = (app) => {
    *         type: string
    *       imagem:
    *         type: string
+   *       campanha:
+   *         type: string
    *   DoacaoProduto:
    *      type: object
    *      properties:
