@@ -17,6 +17,10 @@ module.exports = (app) => {
    *         type: string
    *       imagem:
    *         type: string
+   *       doacoes:
+   *         type: array
+   *         items:
+   *           type: string
    */
   app
     .route("/campanhas")

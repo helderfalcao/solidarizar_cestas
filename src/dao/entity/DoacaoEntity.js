@@ -4,7 +4,7 @@ var mongoose = require("mongoose"),
 var model = new Schema(
   {
     nome: String,
-    produtos: [String],
+    produtos: [{produto: String, quantidade: Number}],
     cesta: String,
     status: String, //Pendente, Chegou, Entregue
     imagem: String

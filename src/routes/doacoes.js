@@ -12,13 +12,20 @@ module.exports = (app) => {
    *       produtos:
    *         type: array
    *         items:
-   *           type: string
+   *           $ref: '#/definitions/DoacaoProduto'
    *       cesta:
    *         type: string
    *       status:
    *         type: string
    *       imagem:
    *         type: string
+   *   DoacaoProduto:
+   *      type: object
+   *      properties:
+   *        produto:
+   *          type: string
+   *        quantidade:
+   *          type: number
    */
   app
     .route("/doacoes")
