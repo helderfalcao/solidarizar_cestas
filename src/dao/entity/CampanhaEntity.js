@@ -8,7 +8,8 @@ var model = new Schema(
     responsavel: String,
     idInstituicao: String,
     imagem: String,
-    doacoes: [String]
+    doacoes: [String],
+    receptores: [String]
   },
   {
     strict: false,

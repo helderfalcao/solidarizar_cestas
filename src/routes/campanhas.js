@@ -17,6 +17,10 @@ module.exports = (app) => {
    *         type: string
    *       imagem:
    *         type: string
+   *       receptores:
+   *         type: array
+   *         items:
+   *           type: string
    *       doacoes:
    *         type: array
    *         items:
