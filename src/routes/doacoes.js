@@ -13,6 +13,8 @@ module.exports = (app) => {
    *         type: array
    *         items:
    *           $ref: '#/definitions/DoacaoProduto'
+   *       doador:
+   *         type: string 
    *       cesta:
    *         type: string
    *       status:

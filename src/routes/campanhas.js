@@ -108,4 +108,26 @@ module.exports = (app) => {
     .delete((req, res) => {
       helper.runDefaultPromise(service.delete(req.body), res);
     });
+    /**
+     * @swagger
+     * /campanhas/summary/{id}:
+     *  get:
+     *    tags:
+     *    - campanhas
+     *    parameters:
+     *    - in: path
+     *      name: id
+     *      description: "Campanha id"
+     *      required: true
+     *      type: string
+     *    description: Utilizado para recuperar o summary de uma determinada campanha
+     *    responses:
+     *      '200':
+     *        description: summary retornado com sucesso
+     */
+    app
+    .route("/campanhas/summary/:id")
+    .get((req, res) => {
+      helper.runDefaultPromise(service.campaignSummary([req.params.id]), res)
+    })
 };

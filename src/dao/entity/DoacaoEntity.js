@@ -4,10 +4,11 @@ var mongoose = require("mongoose"),
 var model = new Schema(
   {
     nome: String,
-    produtos: [{produto: String, quantidade: Number}],
+    produtos: [{ produto: String, quantidade: Number }],
+    doador: String,
     cesta: String,
     status: String, //Pendente, Chegou, Entregue
-    imagem: String
+    imagem: String,
   },
   {
     strict: false,
