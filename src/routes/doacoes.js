@@ -23,6 +23,11 @@ module.exports = (app) => {
    *         type: string
    *       campanha:
    *         type: string
+   *       receptor:
+   *         type: string
+   *       dia:
+   *         type: string
+   *         format: date 
    *   DoacaoProduto:
    *      type: object
    *      properties:
